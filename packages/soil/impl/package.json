@@ -1,0 +1,12 @@
+{
+  "name": "@bakery/soil-impl",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean-install": "npm ci",
+    "build": "rm -rf lib && tsc",
+    "test": ""
+  },
+  "keywords": [],
+  "author": "Matt Massoodi"
+}
