@@ -1,9 +1,9 @@
-import { IAdmin } from '@bakery/soil-api'
+import { IAdmin, IDao } from '@bakery/soil-api'
 import { FilterQuery } from 'mongoose'
 import { Admin } from '../models'
 import { IAdminFilterDto, IAdminCreateDto, IAdminUpdateDto } from '../dto'
 
-export class AdminDao {
+export class AdminDao implements IDao<IAdmin, IAdminFilterDto, IAdminCreateDto, IAdminUpdateDto> {
   public async find(filter?: FilterQuery<IAdminFilterDto>): Promise<IAdmin[]> {
     return Admin.find(filter)
   }

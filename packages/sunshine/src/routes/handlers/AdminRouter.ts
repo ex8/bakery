@@ -11,9 +11,9 @@ const routes: IRoute[] = [
     middlewares: [],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = dao.findOne({ id })
+      const admin = await dao.findOne({ id })
       if (!admin) {
-        return ctx.throw(new Error('no admin found'))
+        return ctx.throw(400, new Error('no admin found'))
       }
       ctx.status = 200
       ctx.body = { admin }
@@ -25,9 +25,9 @@ const routes: IRoute[] = [
     middlewares: [],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = dao.update(id, ctx.request.body)
+      const admin = await dao.update(id, ctx.request.body)
       if (!admin) {
-        return ctx.throw(new Error('no admin found'))
+        return ctx.throw(400, new Error('no admin found'))
       }
       ctx.status = 200
       ctx.body = { admin }
@@ -39,9 +39,9 @@ const routes: IRoute[] = [
     middlewares: [],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = dao.remove(id)
+      const admin = await dao.remove(id)
       if (!admin) {
-        return ctx.throw(new Error('no admin found'))
+        return ctx.throw(400, new Error('no admin found'))
       }
       ctx.status = 200
       ctx.body = { admin }
