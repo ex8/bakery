@@ -1,3 +1,2 @@
-export function soilApi(): string {
-  return 'soil api'
-}
+export * from './models'
+export * from './routes'

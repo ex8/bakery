@@ -1,8 +1,11 @@
 import { Middleware } from 'koa'
 import compose from 'koa-compose'
 import Router from '@koa/router'
+import { AdminRouter } from './handlers'
 
-const definitions: Router[] = []
+const definitions: Router[] = [
+  AdminRouter,
+]
 
 export default function routes(): Middleware {
   const api = new Router({ prefix: '/api' })

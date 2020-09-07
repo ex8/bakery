@@ -1,7 +1,15 @@
-import { soilApi } from '@bakery/soil-api'
+import app from './app'
+import db from './config/db'
 
-export function sunshine(): string {
-  return soilApi()
+async function run() {
+  try {
+    await db()
+  } catch (err) {
+    const { message } = err as Error
+    throw new Error(`db connection unsuccesful; ${message}`)
+  }
+  app.listen(8000, () => console.log(`Bakery API running on ${8000}`))
 }
 
-console.log(sunshine())
+run()
+  .catch(err => console.error(err))

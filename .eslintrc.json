@@ -27,5 +27,6 @@
       2,
       "never"
     ]
-  }
+  },
+  "ignorePatterns": ["**/lib/**"]
 }
