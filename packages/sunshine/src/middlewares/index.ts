@@ -4,6 +4,7 @@ import logger from 'koa-pino-logger'
 import helmet from 'koa-helmet'
 import cors from '@koa/cors'
 import body from 'koa-body'
+import auth from './authentication'
 
 export default function middlewares(): Middleware {
   return compose([
@@ -11,5 +12,6 @@ export default function middlewares(): Middleware {
     helmet(),
     cors(),
     body(),
+    auth(),
   ])
 }
