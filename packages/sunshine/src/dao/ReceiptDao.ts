@@ -13,7 +13,7 @@ export class ReceiptDao implements IDao<IReceipt, IReceiptFilterDto, IReceiptCre
   }
 
   public async create(entity: IReceiptCreateDto): Promise<IReceipt> {
-    return Receipt.create(entity)
+    return Receipt.create(entity as IReceipt)
   }
 
   public async update(id: string, entity: IReceiptUpdateDto): Promise<IReceipt> {

@@ -13,7 +13,7 @@ export class OrderDao implements IDao<IOrder, IOrderFilterDto, IOrderCreateDto, 
   }
 
   public async create(entity: IOrderCreateDto): Promise<IOrder> {
-    return Order.create(entity)
+    return Order.create(entity as IOrder)
   }
 
   public async update(id: string, entity: IOrderUpdateDto): Promise<IOrder> {

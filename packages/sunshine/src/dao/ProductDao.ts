@@ -13,7 +13,7 @@ export class ProductDao implements IDao<IProduct, IProductFilterDto, IProductCre
   }
 
   public async create(entity: IProductCreateDto): Promise<IProduct> {
-    return Product.create(entity)
+    return Product.create(entity as IProduct)
   }
 
   public async update(id: string, entity: IProductUpdateDto): Promise<IProduct> {
