@@ -1,6 +1,6 @@
-import { IProduct, IAdmin } from '@bakery/soil-api'
+import { IAdmin } from '@bakery/soil-api'
 
-export interface IProductFilterDto extends IProduct {
+export interface IProductFilterDto {
   title: string
   description: string
   price: number
@@ -10,7 +10,7 @@ export interface IProductFilterDto extends IProduct {
   updatedAt: string
 }
 
-export interface IProductCreateDto extends IProduct {
+export interface IProductCreateDto {
   title: string
   description: string
   images: string[]
@@ -19,11 +19,10 @@ export interface IProductCreateDto extends IProduct {
   admin: IAdmin
 }
 
-export interface IProductUpdateDto extends IProduct {
-  title: string
-  description: string
-  images: string[]
-  price: number
-  public: boolean
-  admin: IAdmin
+export interface IProductUpdateDto {
+  title?: string
+  description?: string
+  images?: string[]
+  price?: number
+  public?: boolean
 }

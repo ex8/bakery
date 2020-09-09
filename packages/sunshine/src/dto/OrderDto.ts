@@ -1,6 +1,6 @@
-import { IOrder, IOrderItem, OrderStatusType, IReceipt } from '@bakery/soil-api'
+import { IOrderItem, OrderStatusType, IReceipt } from '@bakery/soil-api'
 
-export interface IOrderFilterDto extends IOrder {
+export interface IOrderFilterDto {
   items: IOrderItem[]
   pickupDateTime: string
   status: OrderStatusType
@@ -9,16 +9,16 @@ export interface IOrderFilterDto extends IOrder {
   updatedAt: string
 }
 
-export interface IOrderCreateDto extends IOrder {
+export interface IOrderCreateDto {
   items: IOrderItem[]
   pickupDateTime: string
   status: OrderStatusType
   receipt: IReceipt
 }
 
-export interface IOrderUpdateDto extends IOrder {
-  items: IOrderItem[]
-  pickupDateTime: string
-  status: OrderStatusType
-  receipt: IReceipt
+export interface IOrderUpdateDto {
+  items?: IOrderItem[]
+  pickupDateTime?: string
+  status?: OrderStatusType
+  receipt?: IReceipt
 }
