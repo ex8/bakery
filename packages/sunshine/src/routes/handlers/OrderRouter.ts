@@ -1,6 +1,7 @@
 import { IRoute, HttpMethod, toRouter } from '@bakery/soil-api'
 import { Context } from 'koa'
 import { OrderDao } from '../../dao'
+import { isAuthenticated } from '../../util'
 
 const dao = new OrderDao()
 
@@ -8,7 +9,7 @@ const routes: IRoute[] = [
   {
     path: '/orders',
     method: HttpMethod.GET,
-    middlewares: [],
+    middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const orders = await dao.find()
       if (!orders) {
@@ -35,7 +36,7 @@ const routes: IRoute[] = [
   {
     path: '/orders/:id',
     method: HttpMethod.GET,
-    middlewares: [],
+    middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
       const order = await dao.findOne({ id })
@@ -49,7 +50,7 @@ const routes: IRoute[] = [
   {
     path: '/orders/:id',
     method: HttpMethod.PUT,
-    middlewares: [],
+    middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
       const { body } = ctx.request
@@ -67,7 +68,7 @@ const routes: IRoute[] = [
   {
     path: '/orders/:id',
     method: HttpMethod.DELETE,
-    middlewares: [],
+    middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
       const order = await dao.remove(id)
