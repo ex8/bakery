@@ -13,7 +13,7 @@ export class AdminDao implements IDao<IAdmin, IAdminFilterDto, IAdminCreateDto, 
   }
 
   public async create(entity: IAdminCreateDto): Promise<IAdmin> {
-    return Admin.create(entity)
+    return Admin.create(entity as IAdmin)
   }
 
   public async update(id: string, entity: IAdminUpdateDto): Promise<IAdmin> {
