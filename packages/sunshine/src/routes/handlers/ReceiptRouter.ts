@@ -1,9 +1,9 @@
-import { IRoute, HttpMethod, toRouter } from '@bakery/soil-api'
+import { IRoute, HttpMethod, toRouter, IReceipt } from '@bakery/soil-api'
 import { Context } from 'koa'
-import { ReceiptDao } from '../../dao'
+import { DaoFactory } from '../../dao'
 import { isAuthenticated } from '../../util'
 
-const dao = new ReceiptDao()
+const Factory = new DaoFactory()
 
 const routes: IRoute[] = [
   {
@@ -11,7 +11,7 @@ const routes: IRoute[] = [
     method: HttpMethod.GET,
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
-      const receipts = await dao.find()
+      const receipts: IReceipt[] = await Factory.getReceiptDao().find()
       if (!receipts) {
         return ctx.throw(400, { success: false, message: 'no receipts found' })
       }
@@ -28,7 +28,7 @@ const routes: IRoute[] = [
       if (!body) {
         return ctx.throw(400, { success: false, message: 'no body found' })
       }
-      const receipt = await dao.create(body)
+      const receipt: IReceipt = await Factory.getReceiptDao().create(body)
       ctx.status = 201
       ctx.body = { receipt }
     },
@@ -39,7 +39,7 @@ const routes: IRoute[] = [
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const receipt = await dao.findOne({ id })
+      const receipt: IReceipt = await Factory.getReceiptDao().findOne({ id })
       if (!receipt) {
         return ctx.throw(400, { success: false, message: `no receipt found ${id}` })
       }
@@ -57,7 +57,7 @@ const routes: IRoute[] = [
       if (!body) {
         return ctx.throw(400, { success: false, message: 'no body found' })
       }
-      const receipt = await dao.update(id, body)
+      const receipt: IReceipt = await Factory.getReceiptDao().update(id, body)
       if (!receipt) {
         return ctx.throw(400, { success: false, message: `no receipt found ${id}` })
       }
@@ -71,7 +71,7 @@ const routes: IRoute[] = [
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const receipt = await dao.remove(id)
+      const receipt: IReceipt = await Factory.getReceiptDao().remove(id)
       ctx.status = 200
       ctx.body = { receipt }
     },

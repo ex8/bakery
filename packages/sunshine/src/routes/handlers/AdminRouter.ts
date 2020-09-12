@@ -1,9 +1,9 @@
-import { IRoute, HttpMethod, toRouter } from '@bakery/soil-api'
+import { IRoute, HttpMethod, toRouter, IAdmin } from '@bakery/soil-api'
 import { Context } from 'koa'
-import { AdminDao } from '../../dao'
+import { DaoFactory } from '../../dao'
 import { isAuthenticated } from '../../util'
 
-const dao = new AdminDao()
+const Factory = new DaoFactory()
 
 const routes: IRoute[] = [
   {
@@ -12,7 +12,7 @@ const routes: IRoute[] = [
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = await dao.findOne({ id })
+      const admin: IAdmin = await Factory.getAdminDao().findOne({ id })
       if (!admin) {
         return ctx.throw(400, new Error('no admin found'))
       }
@@ -26,7 +26,7 @@ const routes: IRoute[] = [
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = await dao.update(id, ctx.request.body)
+      const admin: IAdmin = await Factory.getAdminDao().update(id, ctx.request.body)
       if (!admin) {
         return ctx.throw(400, new Error('no admin found'))
       }
@@ -40,7 +40,7 @@ const routes: IRoute[] = [
     middlewares: [isAuthenticated('admin')],
     handler: async (ctx: Context): Promise<void> => {
       const { id } = ctx.params
-      const admin = await dao.remove(id)
+      const admin: IAdmin = await Factory.getAdminDao().remove(id)
       if (!admin) {
         return ctx.throw(400, new Error('no admin found'))
       }
