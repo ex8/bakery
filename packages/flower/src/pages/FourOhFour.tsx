@@ -6,4 +6,4 @@ const FourOhFour: React.FC = () => (
   </div>
 )
 
-export default FourOhFour
+export { FourOhFour }

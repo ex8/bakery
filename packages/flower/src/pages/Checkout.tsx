@@ -6,4 +6,4 @@ const Checkout: React.FC = () => (
   </div>
 )
 
-export default Checkout
+export { Checkout }
