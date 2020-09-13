@@ -4,6 +4,12 @@ import { makeStyles } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { toggleNavigation, IToggleNavigationAction } from '../state/actions'
+
+interface ITopBarProps {
+  toggleNavigation: () => IToggleNavigationAction
+}
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -19,13 +25,13 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 }))
 
-const TopBar: React.FC = () => {
+const TopBar: React.FC<ITopBarProps> = ({ toggleNavigation }: ITopBarProps) => {
   const { container, link, bars, toolbar } = useStyles()
   return (
     <div className={container}>
       <AppBar>
         <Toolbar>
-          <IconButton className={bars} color='inherit' >
+          <IconButton className={bars} color='inherit' onClick={() => toggleNavigation()}>
             <FontAwesomeIcon icon={faBars} size="xs" />
           </IconButton>
           <Typography className={container} variant='h6'>
@@ -43,4 +49,8 @@ const TopBar: React.FC = () => {
   )
 }
 
-export { TopBar }
+const mapDispatchToProps = {
+  toggleNavigation,
+}
+
+export default connect(null, mapDispatchToProps)(TopBar)
