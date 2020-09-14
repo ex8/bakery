@@ -1,9 +1,12 @@
 import React from 'react'
-import { Grid, Drawer, List, ListSubheader } from '@material-ui/core'
+import { Drawer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
 import { toggleNavigation, IToggleNavigationAction } from '../state/actions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook, faHome, faList, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import NavigationItems, { INavigationItem } from './NavigationItems'
 
 interface INavigationProps {
   open: boolean
@@ -20,19 +23,17 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Navigation: React.FC<INavigationProps> = ({ open, toggleNavigation }: INavigationProps) => {
+  const items: INavigationItem[] = [
+    { label: 'Home', to: '/', icon: <FontAwesomeIcon icon={faHome} /> },
+    { label: 'About', to: '/about', icon: <FontAwesomeIcon icon={faBook} /> },
+    { label: 'Menu', to: '/menu', icon: <FontAwesomeIcon icon={faList} /> },
+    { label: 'Contact', to: '/contact', icon: <FontAwesomeIcon icon={faPhoneAlt} /> },
+  ]
   const { drawer, paper } = useStyles()
   return (
-    <Grid container justify="space-between">
-      <Grid item>
-        <Drawer className={drawer} classes={{ paper }} open={open} onClose={() => toggleNavigation()}>
-          <List>
-            <ListSubheader>
-              Bakery
-            </ListSubheader>
-          </List>
-        </Drawer>
-      </Grid>
-    </Grid>
+    <Drawer className={drawer} classes={{ paper }} open={open} onClose={() => toggleNavigation()}>
+      <NavigationItems items={items} />
+    </Drawer>
   )
 }
 
