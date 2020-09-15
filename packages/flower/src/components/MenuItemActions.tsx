@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 export interface IMenuItemActionsProps {
   expanded: boolean
-  setExpanded: Dispatch
+  setExpanded: Dispatch<boolean>
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -56,7 +56,7 @@ const MenuItemActions: React.FC<IMenuItemActionsProps> = ({ expanded, setExpande
           </Tooltip>
         </Grid>
         <Grid item>
-          <Tooltip title='Expand' arrow>
+          <Tooltip title={expanded ? 'Collapse' : 'Expand'} arrow>
             <IconButton
               className={clsx(expand, { [expandOpened]: expanded })}
               onClick={() => setExpanded(!expanded)}
