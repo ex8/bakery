@@ -1,5 +1,5 @@
 import React from 'react'
-import { MuiThemeProvider } from '@material-ui/core'
+import { Container, MuiThemeProvider } from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom'
 import theme from './theme'
 import { Router } from './routes'
@@ -14,7 +14,9 @@ const App: React.FC = () => (
       <BrowserRouter>
         <TopBar />
         <Navigation />
-        <Router />
+        <Container>
+          <Router />
+        </Container>
       </BrowserRouter>
     </MuiThemeProvider>
   </Provider>
