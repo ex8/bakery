@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: '56.25%',
   },
   label: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#e8eef1',
     padding: theme.spacing(1),
     margin: theme.spacing(0.5),
   },
