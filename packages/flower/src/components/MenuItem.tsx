@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDollarSign} from '@fortawesome/free-solid-svg-icons'
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 import MenuItemCollapse from './MenuItemCollapse'
 import MenuItemActions from './MenuItemActions'
 
@@ -22,18 +23,24 @@ const useStyles = makeStyles((theme: Theme) => ({
   labelIcon: {
     paddingRight: theme.spacing(0.5),
   },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
 }))
 
 const MenuItem: React.FC = () => {
   const [expanded, setExpanded] = useState(false)
-  const { container, media, label, labelIcon } = useStyles()
+  const { container, media, label, labelIcon, link } = useStyles()
   return (
     <Card className={container}>
       <CardMedia className={media} image='https://source.unsplash.com/collection/4459647' title='title' />
       <CardContent>
         <Grid container>
           <Grid item xs={12}>
-            <Typography variant='h5'>Chocolate Tuxedo Cake</Typography>
+            <Link className={link} to='/menu/ababab'>
+              <Typography variant='h5'>Chocolate Tuxedo Cake</Typography>
+            </Link>
           </Grid>
           <Grid item>
             <Paper className={label} elevation={0} square>

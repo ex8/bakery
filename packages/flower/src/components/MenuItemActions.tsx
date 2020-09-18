@@ -4,6 +4,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faChevronDown, faEye } from '@fortawesome/free-solid-svg-icons'
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 export interface IMenuItemActionsProps {
   expanded: boolean
@@ -11,13 +12,6 @@ export interface IMenuItemActionsProps {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-  container: {
-    flex: 1,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%',
-  },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -28,14 +22,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   expandOpened: {
     transform: 'rotate(180deg)',
   },
-  label: {
-    backgroundColor: '#f5f5f5',
-    padding: theme.spacing(1),
-    margin: theme.spacing(0.5),
-  },
-  labelIcon: {
-    paddingRight: theme.spacing(0.5),
-  },
 }))
 
 const MenuItemActions: React.FC<IMenuItemActionsProps> = ({ expanded, setExpanded }: IMenuItemActionsProps) => {
@@ -45,9 +31,11 @@ const MenuItemActions: React.FC<IMenuItemActionsProps> = ({ expanded, setExpande
       <Grid container justify='space-between'>
         <Grid item>
           <Tooltip title='View' arrow>
-            <IconButton>
-              <FontAwesomeIcon icon={faEye} />
-            </IconButton>
+            <Link to='/menu/ff'>
+              <IconButton>
+                <FontAwesomeIcon icon={faEye} />
+              </IconButton>
+            </Link>
           </Tooltip>
           <Tooltip title='Add to cart' arrow>
             <IconButton>

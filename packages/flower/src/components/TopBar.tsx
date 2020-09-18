@@ -29,7 +29,7 @@ const TopBar: React.FC<ITopBarProps> = ({ toggleNavigation }: ITopBarProps) => {
   const { container, link, bars, toolbar } = useStyles()
   return (
     <div className={container}>
-      <AppBar>
+      <AppBar color='inherit' elevation={0}>
         <Toolbar>
           <IconButton className={bars} color='inherit' onClick={() => toggleNavigation()}>
             <FontAwesomeIcon icon={faBars} size="xs" />
@@ -38,7 +38,7 @@ const TopBar: React.FC<ITopBarProps> = ({ toggleNavigation }: ITopBarProps) => {
             <Link className={link} to='/'>Bakery</Link>
           </Typography>
           <IconButton color='inherit'>
-            <Badge badgeContent={5} color="secondary">
+            <Badge badgeContent={5} color="primary">
               <FontAwesomeIcon icon={faShoppingCart} size="xs" />
             </Badge>
           </IconButton>
