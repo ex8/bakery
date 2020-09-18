@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { toggleNavigation, IToggleNavigationAction } from '../state/actions'
+import { navigationToggle, INavigationToggleAction } from '../state/actions'
+import { cartToggle, ICartToggleAction } from '../state/actions'
 
 interface ITopBarProps {
-  toggleNavigation: () => IToggleNavigationAction
+  navigationToggle: () => INavigationToggleAction
+  cartToggle: () => ICartToggleAction
 }
 
 const useStyles = makeStyles(theme => ({
@@ -25,19 +27,19 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 }))
 
-const TopBar: React.FC<ITopBarProps> = ({ toggleNavigation }: ITopBarProps) => {
+const TopBar: React.FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps) => {
   const { container, link, bars, toolbar } = useStyles()
   return (
     <div className={container}>
       <AppBar color='inherit' elevation={0}>
         <Toolbar>
-          <IconButton className={bars} color='inherit' onClick={() => toggleNavigation()}>
+          <IconButton className={bars} color='inherit' onClick={() => navigationToggle()}>
             <FontAwesomeIcon icon={faBars} size="xs" />
           </IconButton>
           <Typography className={container} variant='h6'>
             <Link className={link} to='/'>Bakery</Link>
           </Typography>
-          <IconButton color='inherit'>
+          <IconButton color='inherit' onClick={() => cartToggle()}>
             <Badge badgeContent={5} color="primary">
               <FontAwesomeIcon icon={faShoppingCart} size="xs" />
             </Badge>
@@ -50,7 +52,8 @@ const TopBar: React.FC<ITopBarProps> = ({ toggleNavigation }: ITopBarProps) => {
 }
 
 const mapDispatchToProps = {
-  toggleNavigation,
+  navigationToggle,
+  cartToggle,
 }
 
 export default connect(null, mapDispatchToProps)(TopBar)

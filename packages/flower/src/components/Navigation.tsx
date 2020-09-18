@@ -3,14 +3,14 @@ import { Drawer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
-import { toggleNavigation, IToggleNavigationAction } from '../state/actions'
+import { navigationToggle, INavigationToggleAction } from '../state/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faList, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import NavigationItems, { INavigationItem } from './NavigationItems'
 
 interface INavigationProps {
   open: boolean
-  toggleNavigation: () => IToggleNavigationAction
+  navigationToggle: () => INavigationToggleAction
 }
 
 const useStyles = makeStyles(() => ({
@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const Navigation: React.FC<INavigationProps> = ({ open, toggleNavigation }: INavigationProps) => {
+const Navigation: React.FC<INavigationProps> = ({ open, navigationToggle }: INavigationProps) => {
   const items: INavigationItem[] = [
     { label: 'Home', to: '/', icon: <FontAwesomeIcon icon={faHome} /> },
     { label: 'Menu', to: '/menu', icon: <FontAwesomeIcon icon={faList} /> },
@@ -30,7 +30,7 @@ const Navigation: React.FC<INavigationProps> = ({ open, toggleNavigation }: INav
   ]
   const { drawer, paper } = useStyles()
   return (
-    <Drawer className={drawer} classes={{ paper }} open={open} onClose={() => toggleNavigation()}>
+    <Drawer className={drawer} classes={{ paper }} open={open} onClose={() => navigationToggle()}>
       <NavigationItems items={items} />
     </Drawer>
   )
@@ -41,7 +41,7 @@ const mapStateToProps = (state: IAppState) => ({
 })
 
 const mapDispatchToProps = {
-  toggleNavigation,
+  navigationToggle,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation)

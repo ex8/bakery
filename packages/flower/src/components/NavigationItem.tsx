@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { toggleNavigation, IToggleNavigationAction } from '../state/actions'
+import { navigationToggle, INavigationToggleAction } from '../state/actions'
 
 export interface INavigationItem {
   label: string
@@ -17,7 +17,7 @@ export interface INavigationItemsProps {
 
 export interface INavigationItemProps {
   item: INavigationItem
-  toggleNavigation: () => IToggleNavigationAction
+  navigationToggle: () => INavigationToggleAction
 }
 
 const useStyles = makeStyles(() => ({
@@ -27,12 +27,12 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const NavigationItem: React.FC<INavigationItemProps> = ({ item, toggleNavigation }: INavigationItemProps) => {
+const NavigationItem: React.FC<INavigationItemProps> = ({ item, navigationToggle }: INavigationItemProps) => {
   const { label, to, icon } = item
   const { link } = useStyles()
   return (
     <Link className={link} to={to}>
-      <ListItem button onClick={() => toggleNavigation()}>
+      <ListItem button onClick={() => navigationToggle()}>
         <ListItemIcon>
           {icon}
         </ListItemIcon>
@@ -43,7 +43,7 @@ const NavigationItem: React.FC<INavigationItemProps> = ({ item, toggleNavigation
 }
 
 const mapDispatchToProps = {
-  toggleNavigation,
+  navigationToggle,
 }
 
 export default connect(null, mapDispatchToProps)(NavigationItem)
