@@ -6,7 +6,7 @@ import { faCartPlus, faChevronDown, faEye } from '@fortawesome/free-solid-svg-ic
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 
-export interface IMenuItemActionsProps {
+export interface IProductItemActionsProps {
   expanded: boolean
   setExpanded: Dispatch<boolean>
 }
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const MenuItemActions: React.FC<IMenuItemActionsProps> = ({ expanded, setExpanded }: IMenuItemActionsProps) => {
+const ProductItemActions: React.FC<IProductItemActionsProps> = ({ expanded, setExpanded }: IProductItemActionsProps) => {
   const { expand, expandOpened } = useStyles()
   return (
     <CardActions>
@@ -59,4 +59,4 @@ const MenuItemActions: React.FC<IMenuItemActionsProps> = ({ expanded, setExpande
   )
 }
 
-export default MenuItemActions
+export default ProductItemActions

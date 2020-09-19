@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const MenuDetail: React.FC = () => {
+const ProductDetail: React.FC = () => {
   const { container } = useStyles()
   return (
     <div className={container}>
@@ -30,7 +30,7 @@ const MenuDetail: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={3}>
           <Card>
-            <h2>Chef Inf</h2>
+            <h2>Chef Info</h2>
           </Card>
         </Grid>
       </Grid>
@@ -38,4 +38,4 @@ const MenuDetail: React.FC = () => {
   )
 }
 
-export { MenuDetail }
+export { ProductDetail }

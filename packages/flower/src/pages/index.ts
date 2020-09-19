@@ -1,5 +1,5 @@
 export * from './Landing'
-export * from './MenuList'
-export * from './MenuDetail'
+export * from './ProductList'
+export * from './ProductDetail'
 export * from './Checkout'
 export * from './FourOhFour'

@@ -4,8 +4,8 @@ import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@material
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
-import MenuItemCollapse from './MenuItemCollapse'
-import MenuItemActions from './MenuItemActions'
+import ProductItemCollapse from './ProductItemCollapse'
+import ProductItemActions from './ProductItemActions'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const MenuItem: React.FC = () => {
+const Product: React.FC = () => {
   const [expanded, setExpanded] = useState(false)
   const { container, media, label, labelIcon, link } = useStyles()
   return (
@@ -55,10 +55,10 @@ const MenuItem: React.FC = () => {
           </Grid>
         </Grid>
       </CardContent>
-      <MenuItemActions expanded={expanded} setExpanded={setExpanded} />
-      <MenuItemCollapse expanded={expanded} />
+      <ProductItemActions expanded={expanded} setExpanded={setExpanded} />
+      <ProductItemCollapse expanded={expanded} />
     </Card>
   )
 }
 
-export default MenuItem
+export default Product
