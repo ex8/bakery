@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Divider, Drawer, Grid, IconButton, Tooltip, Typography } from '@material-ui/core'
+import { Avatar, Button, Divider, Drawer, Grid, IconButton, Tooltip, Typography } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
@@ -31,10 +31,22 @@ const useStyles = makeStyles((theme: Theme) => ({
   checkout: {
     padding: theme.spacing(2),
   },
+  avatar: {
+    [theme.breakpoints.down('xs')]: {
+      left: '25%',
+    },
+    [theme.breakpoints.up('sm')]: {
+      left: '35%',
+    },
+    margin: theme.spacing(2),
+    backgroundColor: '#CFBBFF',
+    width: 115,
+    height: 115,
+  },
 }))
 
 const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
-  const { drawer, paper, title, checkout } = useStyles()
+  const { drawer, paper, title, checkout, avatar } = useStyles()
   return (
     <Drawer
       className={drawer}
@@ -62,7 +74,9 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
         </Grid>
       </Grid>
       <Divider />
-      <FontAwesomeIcon icon={faSadCry} size='3x' />
+      <Avatar className={avatar}>
+        <FontAwesomeIcon icon={faSadCry} size='4x' />
+      </Avatar>
       <Divider />
       <Button className={checkout} color='secondary' variant='contained' size='large' fullWidth>
         Checkout 5 items ($105.21)
