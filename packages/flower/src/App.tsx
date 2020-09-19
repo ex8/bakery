@@ -16,7 +16,7 @@ const App: React.FC = () => (
         <TopBar />
         <Navigation />
         <Cart />
-        <Container>
+        <Container style={{ marginTop: '15px' }}>
           <Router />
         </Container>
       </BrowserRouter>

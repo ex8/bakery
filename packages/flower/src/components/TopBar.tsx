@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
@@ -13,7 +13,7 @@ interface ITopBarProps {
   cartToggle: () => ICartToggleAction
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
   },

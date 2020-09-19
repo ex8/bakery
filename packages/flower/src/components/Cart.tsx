@@ -71,16 +71,19 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
               </Tooltip>
             </Grid>
           </Grid>
+          <Divider light />
+        </Grid>
+        <Grid item xs={12}>
+          <Avatar className={avatar}>
+            <FontAwesomeIcon icon={faSadCry} size='4x' />
+          </Avatar>
+        </Grid>
+        <Grid item xs={12}>
+          <Button className={checkout} color='secondary' variant='contained' size='large' fullWidth>
+            Checkout 5 items ($105.21)
+          </Button>
         </Grid>
       </Grid>
-      <Divider />
-      <Avatar className={avatar}>
-        <FontAwesomeIcon icon={faSadCry} size='4x' />
-      </Avatar>
-      <Divider />
-      <Button className={checkout} color='secondary' variant='contained' size='large' fullWidth>
-        Checkout 5 items ($105.21)
-      </Button>
     </Drawer>
   )
 }
