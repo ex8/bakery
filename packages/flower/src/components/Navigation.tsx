@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
 import { navigationToggle, INavigationToggleAction } from '../state/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faList, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faInfoCircle, faPhoneAlt, faTh } from '@fortawesome/free-solid-svg-icons'
 import NavigationItems, { INavigationItem } from './NavigationItems'
 
 interface INavigationProps {
@@ -25,7 +25,8 @@ const useStyles = makeStyles(() => ({
 const Navigation: React.FC<INavigationProps> = ({ open, navigationToggle }: INavigationProps) => {
   const items: INavigationItem[] = [
     { label: 'Home', to: '/', icon: <FontAwesomeIcon icon={faHome} /> },
-    { label: 'Menu', to: '/menu', icon: <FontAwesomeIcon icon={faList} /> },
+    { label: 'Menu', to: '/menu', icon: <FontAwesomeIcon icon={faTh} /> },
+    { label: 'About', to: '/about', icon: <FontAwesomeIcon icon={faInfoCircle} /> },
     { label: 'Contact', to: '/contact', icon: <FontAwesomeIcon icon={faPhoneAlt} /> },
   ]
   const { drawer, paper } = useStyles()
