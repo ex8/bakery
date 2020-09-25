@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Breadcrumbs, Button, Card, CardMedia, Divider, Grid, Link, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core'
+import { Avatar, Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCat, faCheese, faCubes, faEgg, faHome, faOilCan, faShoppingCart, faSpa, faTh } from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: '46.25%',
+    paddingTop: '53.25%',
   },
 }))
 
@@ -140,7 +140,6 @@ const ProductDetail: React.FC = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Divider />
         <Grid item xs={12}>
           <Typography variant='h5' gutterBottom>Related Products</Typography>
           <Grid container spacing={2}>

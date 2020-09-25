@@ -6,6 +6,7 @@ import { IAppState } from '../state/reducers'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faSadCry } from '@fortawesome/free-solid-svg-icons'
 import { ICartToggleAction, cartToggle } from '../state/actions'
+import { Link } from 'react-router-dom'
 
 interface ICartProps {
   open: boolean
@@ -43,10 +44,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: 115,
     height: 115,
   },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
 }))
 
 const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
-  const { drawer, paper, title, checkout, avatar } = useStyles()
+  const { drawer, paper, title, checkout, avatar, link } = useStyles()
   return (
     <Drawer
       className={drawer}
@@ -79,9 +84,18 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
           </Avatar>
         </Grid>
         <Grid item xs={12}>
-          <Button className={checkout} color='secondary' variant='contained' size='large' fullWidth>
-            Checkout 5 items ($105.21)
+          <Link className={link} to='/checkout'>
+            <Button
+              className={checkout}
+              color='secondary'
+              variant='contained'
+              size='large'
+              onClick={() => cartToggle()}
+              fullWidth
+            >
+              Checkout 5 items ($105.21)
           </Button>
+          </Link>
         </Grid>
       </Grid>
     </Drawer>
