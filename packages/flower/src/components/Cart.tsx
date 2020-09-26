@@ -31,6 +31,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   checkout: {
     padding: theme.spacing(2),
+    bottom: theme.spacing(0),
+    position: 'absolute',
   },
   avatar: {
     [theme.breakpoints.down('xs')]: {
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       left: '35%',
     },
     margin: theme.spacing(2),
-    backgroundColor: '#CFBBFF',
+    backgroundColor: '#9CC8F5',
     width: 115,
     height: 115,
   },

@@ -38,8 +38,7 @@ const ProductDetail: React.FC = () => {
               </Typography>
             </Grid>
             <Grid item>
-              <Button variant='contained' color='secondary'>
-                <FontAwesomeIcon className={icon} icon={faShoppingCart} />
+              <Button variant='contained' color='secondary' startIcon={<FontAwesomeIcon icon={faShoppingCart} />}>
                 Add to Cart ($5.99)
               </Button>
             </Grid>
