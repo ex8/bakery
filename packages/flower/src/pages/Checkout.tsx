@@ -3,7 +3,8 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Button, Card, CardActions, CardContent, CardHeader, Grid, IconButton, TextField, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faIdCard, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAddressBook, faCalendarAlt, faEnvelope, faIdCard, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { DateTimePicker } from '@material-ui/pickers'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -31,7 +32,10 @@ const Checkout: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <Card className={card}>
-            <CardHeader title='Your Order' />
+            <CardHeader
+              title='Your Order'
+              subheader='To complete your order, you must fill in basic information.'
+            />
             <CardContent>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -93,9 +97,32 @@ const Checkout: React.FC = () => {
                 <Grid item xs={12}>
                   <TextField
                     variant='outlined'
-                    label="Picku"
-                    type="datetime-local"
-                    defaultValue={new Date(Date.now()).toUTCString()}
+                    label='Delivery Address'
+                    InputProps={{
+                      endAdornment: (
+                        <IconButton>
+                          <FontAwesomeIcon icon={faAddressBook} />
+                        </IconButton>
+                      )
+                    }}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <DateTimePicker
+                    label='Delivery Date-Time'
+                    value={new Date()}
+                    onChange={() => console.log('f')}
+                    inputVariant='outlined'
+                    variant='inline'
+                    fullWidth
+                    InputProps={{
+                      endAdornment: (
+                        <IconButton>
+                          <FontAwesomeIcon icon={faCalendarAlt} />
+                        </IconButton>
+                      )
+                    }}
                   />
                 </Grid>
               </Grid>
