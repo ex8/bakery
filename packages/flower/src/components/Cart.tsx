@@ -5,12 +5,13 @@ import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faSadCry } from '@fortawesome/free-solid-svg-icons'
-import { ICartToggleAction, cartToggle } from '../state/actions'
+import { ICartToggleAction, cartToggle, cartClearDialogToggle, ICartClearDialogToggleAction } from '../state/actions'
 import { Link } from 'react-router-dom'
 
 interface ICartProps {
   open: boolean
   cartToggle: () => ICartToggleAction
+  cartClearDialogToggle: () => ICartClearDialogToggleAction
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
+const Cart: React.FC<ICartProps> = ({ open, cartToggle, cartClearDialogToggle }: ICartProps) => {
   const { drawer, paper, title, checkout, avatar, link } = useStyles()
   return (
     <Drawer
@@ -72,7 +73,7 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
             </Grid>
             <Grid item>
               <Tooltip title='Clear' arrow>
-                <IconButton>
+                <IconButton onClick={() => cartClearDialogToggle()}>
                   <FontAwesomeIcon icon={faTrash} />
                 </IconButton>
               </Tooltip>
@@ -110,6 +111,7 @@ const mapStateToProps = (state: IAppState) => ({
 
 const mapDispatchToProps = {
   cartToggle,
+  cartClearDialogToggle,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

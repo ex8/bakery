@@ -10,6 +10,7 @@ import Navigation from './components/Navigation'
 import Cart from './components/Cart'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DayjsUtils from '@date-io/dayjs'
+import ClearCartDialog from './components/ClearCartDialog'
 
 const App: React.FC = () => (
   <Provider store={store}>
@@ -19,6 +20,7 @@ const App: React.FC = () => (
           <TopBar />
           <Navigation />
           <Cart />
+          <ClearCartDialog />
           <Container style={{ marginTop: '15px' }}>
             <Router />
           </Container>
