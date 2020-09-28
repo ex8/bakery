@@ -9,16 +9,24 @@ module.exports = {
     publicPath: '/',
   },
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'ts-loader',
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+        },
       },
-    }],
+      {
+        test: /\.svg$/,
+        use: {
+          loader: '@svgr/webpack',
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.svg'],
   },
   plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
   devtool: 'source-map',

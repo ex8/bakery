@@ -37,7 +37,7 @@ const TopBar: React.FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBa
             <FontAwesomeIcon icon={faBars} size="xs" />
           </IconButton>
           <Typography className={container} variant='h6'>
-            <Link className={link} to='/'>Bakery</Link>
+            <Link className={link} to='/'>Heavenly Sweets</Link>
           </Typography>
           <IconButton color='inherit' onClick={() => cartToggle()}>
             <Badge badgeContent={5} color="primary">
