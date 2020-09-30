@@ -14,7 +14,7 @@ const ProductList: React.FC = () => {
   const { container } = useStyles()
   return (
     <div className={container}>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <ProductFilter />
         {[1, 1, 1, 1, 1, 1, 1].map((v, i) => (
           <Grid key={i} item xs={12} sm={6} md={4}>
