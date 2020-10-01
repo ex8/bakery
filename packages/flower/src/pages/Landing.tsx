@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon, Card, CardContent, IconButton, CardHeader, Avatar, Button } from '@material-ui/core'
+import { Grid, Typography, SvgIcon, Card, CardContent, IconButton, CardHeader, Avatar, Button, Divider } from '@material-ui/core'
 import CakeSvg from '../assets/svg/cake.svg'
 import CartAddSvg from '../assets/svg/add_cart.svg'
 import CalendarSvg from '../assets/svg/calendar.svg'
@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import Product from '../components/Product'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -32,20 +33,51 @@ const useStyles = makeStyles((theme: Theme) => ({
   strip: {
     marginBottom: theme.spacing(4),
   },
+  divider: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
 }))
 
 const Landing: React.FC = () => {
-  const { container, color, icon, card, avatar, strip } = useStyles()
+  const { container, color, icon, card, avatar, strip, divider, link } = useStyles()
   return (
     <div className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
-          <Typography variant='h4' gutterBottom>
+          <Typography variant='h3' gutterBottom>
             Welcome to <span className={color}>Heavenly Sweets</span>.
           </Typography>
           <Typography variant='subtitle1' gutterBottom>
             Delicious, hand-crafted cakes made for delivery.
+            View our menu and see our wide array of items.
+            We ensure high quality ingredients along with
+            apprioriately calculated pricing.
           </Typography>
+          <Divider className={divider} light />
+          <Typography variant='subtitle1' gutterBottom>
+            Delicious, hand-crafted cakes made for delivery.
+            View our menu and see our wide array of items.
+            We ensure high quality ingredients along with
+            apprioriately calculated pricing.
+          </Typography>
+          <div className={divider} />
+          <Grid container spacing={2}>
+            <Grid item>
+              <Link className={link} to='/menu'>
+                <Button variant='contained' color='secondary'>View Our Menu</Button>
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link className={link} to='/about'>
+                <Button variant='contained' color='primary'>Learn About Us</Button>
+              </Link>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12} sm={7}>
           <SvgIcon classes={{ root: icon }} component={CakeSvg} fontSize='large' viewBox='0 0 1000 1000' />
