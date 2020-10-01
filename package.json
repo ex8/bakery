@@ -8,7 +8,7 @@
     }
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap --hoist --strict",
     "lint": "eslint . --fix --ext .ts",
     "clean-install": "lerna run clean-install",
     "clean-install:one": "lerna run --stream clean-install --scope",
