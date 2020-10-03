@@ -1,8 +1,8 @@
 import React from 'react'
-import { Avatar, Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@material-ui/core'
+import { Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemText, Typography } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCat, faCheese, faCubes, faEgg, faHome, faOilCan, faShoppingCart, faSpa, faTh } from '@fortawesome/free-solid-svg-icons'
+import { faCheese, faHome, faShoppingCart, faTh } from '@fortawesome/free-solid-svg-icons'
 import { Link as RouterLink } from 'react-router-dom'
 import Product from '../components/Product'
 
@@ -23,10 +23,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: 0,
     paddingTop: '53.25%',
   },
+  divider: {
+    margin: theme.spacing(3),
+  },
 }))
 
 const ProductDetail: React.FC = () => {
-  const { container, card, icon, list, media } = useStyles()
+  const { container, card, icon, list, media, divider } = useStyles()
   return (
     <div className={container}>
       <Grid container spacing={2}>
@@ -89,56 +92,29 @@ const ProductDetail: React.FC = () => {
               <Card className={card}>
                 <Typography variant='h5'>Ingredients</Typography>
                 <List className={list}>
-                  <ListItem button>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FontAwesomeIcon icon={faEgg} />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Eggs' secondary="Two (2x)" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FontAwesomeIcon icon={faSpa} />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Flour' secondary="500 grams (500g)" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FontAwesomeIcon icon={faCat} />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Milk' />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FontAwesomeIcon icon={faCubes} />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Butter' secondary="Half a stick of buter" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FontAwesomeIcon icon={faOilCan} />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText primary='Oil' secondary="Olive Oil preferred" />
-                  </ListItem>
+                  {[1, 1, 1, 1].map((_, i) => (
+                    <ListItem key={i} button>
+                      <ListItemText primary='Eggs' />
+                    </ListItem>
+                  ))}
                 </List>
               </Card>
             </Grid>
             <Grid item xs={12}>
               <Card className={card}>
-                <Typography variant='h5'>Baker</Typography>
+                <Typography variant='h5'>Categories</Typography>
+                <List className={list}>
+                  {[1, 1, 1, 1].map((_, i) => (
+                    <ListItem key={i} button>
+                      <ListItemText primary='Dessert' />
+                    </ListItem>
+                  ))}
+                </List>
               </Card>
             </Grid>
           </Grid>
         </Grid>
+        <div className={divider} />
         <Grid item xs={12}>
           <Typography variant='h5' gutterBottom>Related Products</Typography>
           <Grid container spacing={2}>

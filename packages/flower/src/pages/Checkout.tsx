@@ -3,7 +3,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Button, Card, CardActions, CardContent, CardHeader, Grid, IconButton, TextField, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal } from '@fortawesome/free-brands-svg-icons'
-import { faAddressBook, faCalendarAlt, faEnvelope, faIdCard, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faEnvelope, faIdCard, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import { DateTimePicker } from '@material-ui/pickers'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -22,12 +22,7 @@ const Checkout: React.FC = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <Card className={card}>
-            <CardHeader title='Your Items' />
-            <CardContent>
-              <Typography>
-                same component as cart drawer
-              </Typography>
-            </CardContent>
+            <CardHeader title='Your Items (5)' />
           </Card>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -38,7 +33,7 @@ const Checkout: React.FC = () => {
             />
             <CardContent>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     variant='outlined'
                     label='First Name'
@@ -52,7 +47,7 @@ const Checkout: React.FC = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     variant='outlined'
                     label='Last Name'
@@ -94,17 +89,38 @@ const Checkout: React.FC = () => {
                     fullWidth
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     variant='outlined'
-                    label='Delivery Address'
-                    InputProps={{
-                      endAdornment: (
-                        <IconButton>
-                          <FontAwesomeIcon icon={faAddressBook} />
-                        </IconButton>
-                      )
-                    }}
+                    label='Street Address'
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    variant='outlined'
+                    label='City'
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <TextField
+                    variant='outlined'
+                    label='State'
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <TextField
+                    variant='outlined'
+                    label='Zip Code'
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <TextField
+                    variant='outlined'
+                    label='Country'
                     fullWidth
                   />
                 </Grid>
@@ -123,6 +139,17 @@ const Checkout: React.FC = () => {
                         </IconButton>
                       )
                     }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant='outlined'
+                    label='Notes'
+                    fullWidth
+                    placeholder="Any order notes for the baker."
+                    multiline
+                    rows={4}
+                    rowsMax={4}
                   />
                 </Grid>
               </Grid>

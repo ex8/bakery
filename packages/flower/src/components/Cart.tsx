@@ -4,9 +4,10 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faSadCry } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faSadCry, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { ICartToggleAction, cartToggle, cartClearDialogToggle, ICartClearDialogToggleAction } from '../state/actions'
 import { Link } from 'react-router-dom'
+import CartContent from './CartContent'
 
 interface ICartProps {
   open: boolean
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       left: '35%',
     },
     margin: theme.spacing(2),
-    backgroundColor: '#9CC8F5',
+    backgroundColor: theme.palette.primary.main,
     width: 115,
     height: 115,
   },
@@ -82,9 +83,10 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle, cartClearDialogToggle }:
           <Divider light />
         </Grid>
         <Grid item xs={12}>
-          <Avatar className={avatar}>
+          {/* <Avatar className={avatar}>
             <FontAwesomeIcon icon={faSadCry} size='4x' />
-          </Avatar>
+          </Avatar> */}
+          <CartContent />
         </Grid>
         <Grid item xs={12}>
           <Link className={link} to='/checkout'>

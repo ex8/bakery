@@ -1,12 +1,7 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { List } from '@material-ui/core'
 import NavigationItem from './NavigationItem'
-
-export interface INavigationItem {
-  label: string
-  to: string
-  icon: ReactElement
-}
+import { INavigationItem } from './Navigation'
 
 export interface INavigationItemsProps {
   items: INavigationItem[]

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Drawer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
@@ -6,7 +6,13 @@ import { IAppState } from '../state/reducers'
 import { navigationToggle, INavigationToggleAction } from '../state/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faInfoCircle, faPhoneAlt, faTh } from '@fortawesome/free-solid-svg-icons'
-import NavigationItems, { INavigationItem } from './NavigationItems'
+import NavigationItems from './NavigationItems'
+
+export interface INavigationItem {
+  label: string
+  to: string
+  icon: ReactElement
+}
 
 interface INavigationProps {
   open: boolean

@@ -1,15 +1,10 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { navigationToggle, INavigationToggleAction } from '../state/actions'
-
-export interface INavigationItem {
-  label: string
-  to: string
-  icon: ReactElement
-}
+import { INavigationItem } from './Navigation'
 
 export interface INavigationItemsProps {
   items: INavigationItem[]
