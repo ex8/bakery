@@ -3,6 +3,7 @@ import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Product from '../components/Product'
 import ProductFilter from '../components/ProductFilter'
+import ProductFilterDrawer from '../components/ProductFilterDrawer'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -22,6 +23,7 @@ const ProductList: React.FC = () => {
           </Grid>
         ))}
       </Grid>
+      <ProductFilterDrawer />
     </div>
   )
 }
