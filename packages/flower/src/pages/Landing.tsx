@@ -63,7 +63,7 @@ const Landing: React.FC = () => {
             <Grid item xs={12}>
               <Typography variant='h4'>How it works</Typography>
             </Grid>
-            {steps.map((step, i) => (
+            {steps.map((step: IStepItem, i) => (
               <Grid key={i} item xs={12} sm={3}>
                 <StepItem item={step} />
               </Grid>

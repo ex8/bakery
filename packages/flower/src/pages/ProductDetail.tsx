@@ -116,7 +116,7 @@ const ProductDetail: React.FC = () => {
         </Grid>
         <div className={divider} />
         <Grid item xs={12}>
-          <Typography variant='h5' gutterBottom>Related Products</Typography>
+          <Typography variant='h5' gutterBottom>Related Items</Typography>
           <Grid container spacing={2}>
             {[1, 1, 1].map((v, i) => (
               <Grid key={i} item xs={12} sm={6} md={4}>
