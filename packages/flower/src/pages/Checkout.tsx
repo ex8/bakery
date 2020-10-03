@@ -90,39 +90,19 @@ const Checkout: React.FC = () => {
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField
-                    variant='outlined'
-                    label='Street Address'
-                    fullWidth
-                  />
+                  <TextField variant='outlined' label='Street Address' fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField
-                    variant='outlined'
-                    label='City'
-                    fullWidth
-                  />
+                  <TextField variant='outlined' label='City' fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <TextField
-                    variant='outlined'
-                    label='State'
-                    fullWidth
-                  />
+                  <TextField variant='outlined' label='State' fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <TextField
-                    variant='outlined'
-                    label='Zip Code'
-                    fullWidth
-                  />
+                  <TextField variant='outlined' label='Zip Code' fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <TextField
-                    variant='outlined'
-                    label='Country'
-                    fullWidth
-                  />
+                  <TextField variant='outlined'label='Country' fullWidth />
                 </Grid>
                 <Grid item xs={12}>
                   <DateTimePicker

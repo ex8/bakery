@@ -1,18 +1,18 @@
 import React from 'react'
-import { Avatar, Button, Divider, Drawer, Grid, IconButton, Tooltip, Typography } from '@material-ui/core'
+import { Avatar, Button, Divider, Drawer, Grid } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { IAppState } from '../state/reducers'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faSadCry, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { ICartToggleAction, cartToggle, cartClearDialogToggle, ICartClearDialogToggleAction } from '../state/actions'
+import { faSadCry } from '@fortawesome/free-solid-svg-icons'
+import { ICartToggleAction, cartToggle } from '../state/actions'
 import { Link } from 'react-router-dom'
 import CartContent from './CartContent'
+import CartTitle from './CartTitle'
 
 interface ICartProps {
   open: boolean
   cartToggle: () => ICartToggleAction
-  cartClearDialogToggle: () => ICartClearDialogToggleAction
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -26,10 +26,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '40%',
     },
-  },
-  title: {
-    padding: theme.spacing(3),
-    color: 'inherit',
   },
   checkout: {
     padding: theme.spacing(2),
@@ -54,8 +50,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Cart: React.FC<ICartProps> = ({ open, cartToggle, cartClearDialogToggle }: ICartProps) => {
-  const { drawer, paper, title, checkout, avatar, link } = useStyles()
+const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
+  const { drawer, paper, checkout, avatar, link } = useStyles()
   return (
     <Drawer
       className={drawer}
@@ -66,26 +62,13 @@ const Cart: React.FC<ICartProps> = ({ open, cartToggle, cartClearDialogToggle }:
     >
       <Grid container>
         <Grid item xs={12}>
-          <Grid container className={title} justify='space-between' alignItems='center'>
-            <Grid item>
-              <Typography variant='h5'>
-                Your Cart (5)
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Tooltip title='Clear' arrow>
-                <IconButton onClick={() => cartClearDialogToggle()}>
-                  <FontAwesomeIcon icon={faTrash} />
-                </IconButton>
-              </Tooltip>
-            </Grid>
-          </Grid>
+          <CartTitle text='Your Cart (5)' />
           <Divider light />
         </Grid>
         <Grid item xs={12}>
-          {/* <Avatar className={avatar}>
+          <Avatar className={avatar}>
             <FontAwesomeIcon icon={faSadCry} size='4x' />
-          </Avatar> */}
+          </Avatar>
           <CartContent />
         </Grid>
         <Grid item xs={12}>
@@ -113,7 +96,6 @@ const mapStateToProps = (state: IAppState) => ({
 
 const mapDispatchToProps = {
   cartToggle,
-  cartClearDialogToggle,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)
