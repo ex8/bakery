@@ -33,7 +33,7 @@ const CartContentItem: React.FC = () => {
           <Typography variant='caption'>$5.99</Typography>
         </Grid>
         <Grid item xs={2}>
-          <Tooltip title='Close' arrow>
+          <Tooltip title='Remove' arrow>
             <IconButton>
               <FontAwesomeIcon icon={faTimes} />
             </IconButton>

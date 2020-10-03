@@ -1,10 +1,12 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Button, Card, CardActions, CardContent, CardHeader, Grid, IconButton, TextField, Typography } from '@material-ui/core'
+import { Button, Card, CardContent, CardHeader, Grid, IconButton, TextField, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal } from '@fortawesome/free-brands-svg-icons'
 import { faCalendarAlt, faEnvelope, faIdCard, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import { DateTimePicker } from '@material-ui/pickers'
+import CartContent from '../components/CartContent'
+import CartTitle from '../components/CartTitle'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -20,10 +22,19 @@ const Checkout: React.FC = () => {
   return (
     <div className={container}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Card className={card}>
-            <CardHeader title='Your Items (5)' />
-          </Card>
+        <Grid item xs={12}>
+          <Grid container spacing={1} justify='space-between'>
+            <Grid item>
+              <Typography variant='h4'>
+                Checkout
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button variant='contained' color='secondary' startIcon={<FontAwesomeIcon icon={faPaypal} />}>
+                Pay using PayPal
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Card className={card}>
@@ -102,7 +113,7 @@ const Checkout: React.FC = () => {
                   <TextField variant='outlined' label='Zip Code' fullWidth />
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <TextField variant='outlined'label='Country' fullWidth />
+                  <TextField variant='outlined' label='Country' fullWidth />
                 </Grid>
                 <Grid item xs={12}>
                   <DateTimePicker
@@ -134,11 +145,15 @@ const Checkout: React.FC = () => {
                 </Grid>
               </Grid>
             </CardContent>
-            <CardActions>
-              <Button variant='contained' color='secondary' startIcon={<FontAwesomeIcon icon={faPaypal} />}>
-                Pay using PayPal
-              </Button>
-            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Card className={card}>
+            <CartTitle text='Your Cart (5)' />
+            <CartContent />
+            <Typography>
+              Total amount: $106.55
+            </Typography>
           </Card>
         </Grid>
       </Grid>
