@@ -1,8 +1,8 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import Product from '../components/Product'
-import ProductFilter from '../components/ProductFilter'
+import Product from '../components/product/Product'
+import ProductFilter from '../components/product/ProductFilter'
 
 const useStyles = makeStyles(() => ({
   container: {

@@ -6,10 +6,10 @@ import CalendarSvg from '../assets/svg/calendar.svg'
 import PaySvg from '../assets/svg/pay.svg'
 import DeliverySvg from '../assets/svg/delivery.svg'
 import SocialSvg from '../assets/svg/social.svg'
-import StepItem, { IStepItem } from '../components/StepItem'
-import Hero from '../components/Hero'
-import Featured from '../components/Featured'
-import SocialButtons from '../components/SocialButtons'
+import StepItem, { IStepItem } from '../components/landing/StepItem'
+import Hero from '../components/landing/Hero'
+import Featured from '../components/landing/Featured'
+import SocialButtons from '../components/landing/SocialButtons'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {

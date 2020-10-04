@@ -3,14 +3,14 @@ import { List } from '@material-ui/core'
 import NavigationItem from './NavigationItem'
 import { INavigationItem } from './Navigation'
 
-export interface INavigationItemsProps {
+export interface INavigationItemListProps {
   items: INavigationItem[]
 }
 
-const NavigationItems: React.FC<INavigationItemsProps> = ({ items }: INavigationItemsProps) => (
+const NavigationItemList: React.FC<INavigationItemListProps> = ({ items }: INavigationItemListProps) => (
   <List>
     {items.map((item, index: number) => <NavigationItem key={index} item={item} />)}
   </List>
 )
 
-export default NavigationItems
+export default NavigationItemList

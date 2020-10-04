@@ -4,7 +4,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheese, faHome, faShoppingCart, faTh } from '@fortawesome/free-solid-svg-icons'
 import { Link as RouterLink } from 'react-router-dom'
-import Product from '../components/Product'
+import Product from '../components/product/Product'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {

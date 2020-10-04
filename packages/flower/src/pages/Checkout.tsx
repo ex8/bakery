@@ -3,10 +3,10 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Button, Card, Grid, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal } from '@fortawesome/free-brands-svg-icons'
-import CartContent from '../components/CartContent'
-import CartTitle from '../components/CartTitle'
-import OrderForm from '../components/OrderForm'
-import DeliveryForm from '../components/DeliveryForm'
+import CartContent from '../components/cart/CartContent'
+import CartTitle from '../components/cart/CartTitle'
+import OrderForm from '../components/forms/OrderForm'
+import DeliveryForm from '../components/forms/DeliveryForm'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {

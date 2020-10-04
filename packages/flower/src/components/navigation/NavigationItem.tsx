@@ -3,12 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { navigationToggle, INavigationToggleAction } from '../state/actions'
+import { navigationToggle, INavigationToggleAction } from '../../state/actions'
 import { INavigationItem } from './Navigation'
-
-export interface INavigationItemsProps {
-  items: INavigationItem[]
-}
 
 export interface INavigationItemProps {
   item: INavigationItem

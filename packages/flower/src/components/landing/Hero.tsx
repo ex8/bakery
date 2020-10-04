@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Divider, Grid, Button, SvgIcon } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
-import CakeSvg from '../assets/svg/cake.svg'
+import CakeSvg from '../../assets/svg/cake.svg'
 
 const useStyles = makeStyles((theme: Theme) => ({
   color: {

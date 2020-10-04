@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Grid, SvgIcon, Typography } from '@material-ui/core'
 import MailSvg from '../assets/svg/mail.svg'
 import CitySvg from '../assets/svg/city.svg'
-import ContactForm from '../components/ContactForm'
-import SocialButtons from '../components/SocialButtons'
+import ContactForm from '../components/forms/ContactForm'
+import SocialButtons from '../components/landing/SocialButtons'
 
 const useStyles = makeStyles(() => ({
   container: {

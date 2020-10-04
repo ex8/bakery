@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { navigationToggle, INavigationToggleAction } from '../state/actions'
-import { cartToggle, ICartToggleAction } from '../state/actions'
+import { navigationToggle, INavigationToggleAction } from '../../state/actions'
+import { cartToggle, ICartToggleAction } from '../../state/actions'
 
 interface ITopBarProps {
   navigationToggle: () => INavigationToggleAction

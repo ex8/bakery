@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, Grid, Button } from '@material-ui/core'
-import Product from './Product'
+import Product from '../product/Product'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 

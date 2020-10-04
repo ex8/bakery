@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, useTheme } from '@material-ui/core'
-import { IAppState } from '../state/reducers'
+import { IAppState } from '../../state/reducers'
 import { connect } from 'react-redux'
-import { cartClearDialogToggle, ICartClearDialogToggleAction } from '../state/actions'
+import { cartClearDialogToggle, ICartClearDialogToggleAction } from '../../state/actions'
 
 interface IClearCartDialogProps {
   clearDialogOpen: boolean

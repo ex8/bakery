@@ -3,7 +3,7 @@ import { Typography, Grid, Tooltip, IconButton } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
-import { cartClearDialogToggle, ICartClearDialogToggleAction } from '../state/actions'
+import { cartClearDialogToggle, ICartClearDialogToggleAction } from '../../state/actions'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 interface ICartTitleProps {
