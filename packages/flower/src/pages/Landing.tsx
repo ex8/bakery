@@ -1,16 +1,15 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon, IconButton } from '@material-ui/core'
+import { Grid, Typography, SvgIcon } from '@material-ui/core'
 import CartAddSvg from '../assets/svg/add_cart.svg'
 import CalendarSvg from '../assets/svg/calendar.svg'
 import PaySvg from '../assets/svg/pay.svg'
 import DeliverySvg from '../assets/svg/delivery.svg'
 import SocialSvg from '../assets/svg/social.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import StepItem, { IStepItem } from '../components/StepItem'
 import Hero from '../components/Hero'
 import Featured from '../components/Featured'
+import SocialButtons from '../components/SocialButtons'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -93,9 +92,7 @@ const Landing: React.FC = () => {
                     A second paragrap here with more information please.
                     A small monologue, about two paragraphs describing the history of Heavenly Sweets.
                   </Typography>
-                  <IconButton><FontAwesomeIcon icon={faInstagram} /></IconButton>
-                  <IconButton><FontAwesomeIcon icon={faTwitter} /></IconButton>
-                  <IconButton><FontAwesomeIcon icon={faFacebook} /></IconButton>
+                  <SocialButtons />
                 </Grid>
               </Grid>
             </Grid>
