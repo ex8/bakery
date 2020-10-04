@@ -28,13 +28,25 @@ const DeliveryForm: React.FC = () => {
             <TextField variant='outlined' label='City' fullWidth />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <TextField variant='outlined' label='State' fullWidth />
+          <TextField
+              variant='outlined'
+              label='State'
+              value='CA'
+              disabled
+              fullWidth
+            />
           </Grid>
           <Grid item xs={12} sm={4}>
             <TextField variant='outlined' label='Zip Code' fullWidth />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <TextField variant='outlined' label='Country' fullWidth />
+            <TextField
+              variant='outlined'
+              label='Country'
+              value='USA'
+              disabled
+              fullWidth
+            />
           </Grid>
           <Grid item xs={12}>
             <DateTimePicker
