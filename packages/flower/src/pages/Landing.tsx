@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon } from '@material-ui/core'
+import { Grid, Typography, SvgIcon, Container } from '@material-ui/core'
 import CartAddSvg from '../assets/svg/add_cart.svg'
 import CalendarSvg from '../assets/svg/calendar.svg'
 import PaySvg from '../assets/svg/pay.svg'
@@ -54,9 +54,11 @@ const steps: IStepItem[] = [
 const Landing: React.FC = () => {
   const { container, icon, strip } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
-        <Grid className={strip} item xs={12}><Hero /></Grid>
+        <Grid className={strip} item xs={12}>
+          <Hero />
+        </Grid>
         <Grid className={strip} item xs={12}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -99,7 +101,7 @@ const Landing: React.FC = () => {
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 

@@ -1,19 +1,20 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Grid, Container } from '@material-ui/core'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 import Product from '../components/product/Product'
 import ProductFilter from '../components/product/ProductFilter'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
+    marginTop: theme.spacing(3),
   },
 }))
 
 const ProductList: React.FC = () => {
   const { container } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={3}>
         <ProductFilter />
         {[1, 1, 1, 1, 1, 1, 1].map((v, i) => (
@@ -22,7 +23,7 @@ const ProductList: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Container>
   )
 }
 

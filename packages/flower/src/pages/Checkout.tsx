@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Button, Card, Grid, Typography } from '@material-ui/core'
+import { Button, Card, Grid, Typography, Container } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaypal } from '@fortawesome/free-brands-svg-icons'
 import CartContent from '../components/cart/CartContent'
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Checkout: React.FC = () => {
   const { container, card } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={1} justify='space-between'>
@@ -54,7 +54,7 @@ const Checkout: React.FC = () => {
           </Card>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 

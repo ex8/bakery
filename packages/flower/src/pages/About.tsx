@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon, Card, Avatar, CardContent, CardHeader } from '@material-ui/core'
+import { Grid, Typography, SvgIcon, Card, Avatar, CardContent, CardHeader, Container } from '@material-ui/core'
 import JourneySvg from '../assets/svg/journey.svg'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const About: React.FC = () => {
   const { container, image, card, avatar } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <SvgIcon classes={{ root: image }} component={JourneySvg} viewBox='0 0 1000 1000' />
@@ -68,7 +68,7 @@ const About: React.FC = () => {
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 

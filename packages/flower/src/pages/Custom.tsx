@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Container } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Custom: React.FC = () => {
   const { container } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant='h4' gutterBottom>
@@ -29,7 +29,7 @@ const Custom: React.FC = () => {
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 

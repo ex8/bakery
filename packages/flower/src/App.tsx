@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container, MuiThemeProvider } from '@material-ui/core'
+import { MuiThemeProvider } from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom'
 import theme from './theme'
-import { Router } from './routes'
+import { Router, ScrollToTop } from './routes'
 import TopBar from './components/navigation/TopBar'
 import { Provider } from 'react-redux'
 import store from './state/store'
@@ -21,9 +21,8 @@ const App: React.FC = () => (
           <Navigation />
           <Cart />
           <ClearCartDialog />
-          <Container style={{ marginTop: '15px' }}>
-            <Router />
-          </Container>
+          <ScrollToTop />
+          <Router />
         </BrowserRouter>
       </MuiPickersUtilsProvider>
     </MuiThemeProvider>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import { Container } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -11,9 +12,9 @@ const useStyles = makeStyles(() => ({
 const FourOhFour: React.FC = () => {
   const { container } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <h2>FourOhFour</h2>
-    </div>
+    </Container>
   )
 }
 

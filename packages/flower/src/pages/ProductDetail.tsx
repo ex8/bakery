@@ -1,5 +1,5 @@
 import React from 'react'
-import { Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemText, Typography } from '@material-ui/core'
+import { Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemText, Typography, Container } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheese, faHome, faShoppingCart, faTh } from '@fortawesome/free-solid-svg-icons'
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const ProductDetail: React.FC = () => {
   const { container, card, icon, list, media, divider } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container justify='space-between'>
@@ -126,7 +126,7 @@ const ProductDetail: React.FC = () => {
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 

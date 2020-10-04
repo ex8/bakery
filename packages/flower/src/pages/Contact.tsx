@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid, SvgIcon, Typography } from '@material-ui/core'
+import { Grid, SvgIcon, Typography, Container } from '@material-ui/core'
 import MailSvg from '../assets/svg/mail.svg'
 import CitySvg from '../assets/svg/city.svg'
 import ContactForm from '../components/forms/ContactForm'
@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
 const Contact: React.FC = () => {
   const { container, image } = useStyles()
   return (
-    <div className={container}>
+    <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <ContactForm />
@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
           <SocialButtons />
         </Grid>
       </Grid>
-    </div>
+    </Container>
   )
 }
 
