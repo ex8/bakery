@@ -11,6 +11,7 @@ import Cart from './components/cart/Cart'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DayjsUtils from '@date-io/dayjs'
 import ClearCartDialog from './components/cart/ClearCartDialog'
+import Footer from './components/landing/Footer'
 
 const App: React.FC = () => (
   <Provider store={store}>
@@ -23,6 +24,7 @@ const App: React.FC = () => (
           <ClearCartDialog />
           <ScrollToTop />
           <Router />
+          <Footer />
         </BrowserRouter>
       </MuiPickersUtilsProvider>
     </MuiThemeProvider>
