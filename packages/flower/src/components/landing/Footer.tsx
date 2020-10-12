@@ -19,13 +19,13 @@ interface IFooterMenuItem {
 const menus: Record<FooterMenu, IFooterMenuItem[]> = {
   main: [
     { to: '/', icon: faHome, text: 'Home' },
-    { to: '/checkout', icon: faShoppingBasket, text: 'Checkout' },
     { to: '/about', icon: faInfoCircle, text: 'About' },
     { to: '/contact', icon: faPhoneAlt, text: 'Contact' },
   ],
   sweets: [
     { to: '/menu', icon: faTh, text: 'Menu' },
     { to: '/custom', icon: faBirthdayCake, text: 'Custom' },
+    { to: '/checkout', icon: faShoppingBasket, text: 'Checkout' },
     { to: '/gallery', icon: faCamera, text: 'Gallery' },
   ],
   social: [
@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(4),
+    marginTop: theme.spacing(4),
   },
   link: {
     textDecoration: 'none',

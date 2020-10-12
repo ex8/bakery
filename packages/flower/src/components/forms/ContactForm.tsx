@@ -77,6 +77,16 @@ const ContactForm: React.FC = () => {
             />
           </Grid>
           <Grid item xs={12}>
+            <TextField
+              variant='outlined'
+              label='Message'
+              fullWidth
+              multiline
+              rows={4}
+              rowsMax={4}
+            />
+          </Grid>
+          <Grid item xs={12}>
             <Button
               variant='contained'
               color='primary'
