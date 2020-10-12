@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Grid, IconButton, TextField, Chip, Tooltip, FormControl, InputLabel, Select, MenuItem, Typography } from '@material-ui/core'
+import React, { useState, FC } from 'react'
+import { Grid, IconButton, TextField, Chip, Tooltip, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const ProductFilter: React.FC = () => {
+const ProductFilter: FC = () => {
   const { chip } = useStyles()
   const [category, setCategory] = useState('')
   return (

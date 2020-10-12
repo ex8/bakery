@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Grid, Typography, SvgIcon, Container } from '@material-ui/core'
 import CartAddSvg from '../assets/svg/add_cart.svg'
@@ -51,7 +51,7 @@ const steps: IStepItem[] = [
   },
 ]
 
-const Landing: React.FC = () => {
+const Landing: FC = () => {
   const { container, icon, strip } = useStyles()
   return (
     <Container className={container}>

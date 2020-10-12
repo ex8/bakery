@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   toolbar: theme.mixins.toolbar,
 }))
 
-const TopBar: React.FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps) => {
+const TopBar: FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps) => {
   const { container, link, bars, toolbar } = useStyles()
   return (
     <div className={container}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Product: React.FC = () => {
+const Product: FC = () => {
   const [expanded, setExpanded] = useState(false)
   const { container, media, label, labelIcon, link } = useStyles()
   return (

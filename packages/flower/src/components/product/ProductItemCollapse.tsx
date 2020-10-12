@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Collapse, CardContent, Typography } from '@material-ui/core'
 
 export interface IProductItemCollapseProps {
   expanded: boolean
 }
 
-const ProductItemCollapse: React.FC<IProductItemCollapseProps> = ({ expanded }: IProductItemCollapseProps) => (
+const ProductItemCollapse: FC<IProductItemCollapseProps> = ({ expanded }: IProductItemCollapseProps) => (
   <Collapse in={expanded} timeout='auto' unmountOnExit>
     <CardContent>
       <Typography variant='h6'>Ingredients</Typography>

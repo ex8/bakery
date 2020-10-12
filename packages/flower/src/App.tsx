@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { MuiThemeProvider } from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom'
 import theme from './theme'
@@ -13,7 +13,7 @@ import DayjsUtils from '@date-io/dayjs'
 import ClearCartDialog from './components/cart/ClearCartDialog'
 import Footer from './components/landing/Footer'
 
-const App: React.FC = () => (
+const App: FC = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <MuiPickersUtilsProvider utils={DayjsUtils}>

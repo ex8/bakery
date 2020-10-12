@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Button, Card, Grid, Typography, Container } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Checkout: React.FC = () => {
+const Checkout: FC = () => {
   const { container, card } = useStyles()
   return (
     <Container className={container}>

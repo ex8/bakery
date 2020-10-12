@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Grid, Container } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Product from '../components/product/Product'
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const ProductList: React.FC = () => {
+const ProductList: FC = () => {
   const { container } = useStyles()
   return (
     <Container className={container}>

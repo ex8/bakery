@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { ListItem, Grid, FormControl, Select, OutlinedInput, MenuItem, Typography, IconButton, Tooltip } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const CartContentItem: React.FC = () => {
+const CartContentItem: FC = () => {
   const { title } = useStyles()
   return (
     <ListItem button>

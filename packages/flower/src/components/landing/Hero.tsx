@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Typography, Divider, Grid, Button, SvgIcon } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Hero: React.FC = () => {
+const Hero: FC = () => {
   const { color, divider, link, icon } = useStyles()
   return (
     <Grid container>

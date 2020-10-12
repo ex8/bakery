@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import { Link } from 'react-router-dom'
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const NavigationItem: React.FC<INavigationItemProps> = ({ item, navigationToggle }: INavigationItemProps) => {
+const NavigationItem: FC<INavigationItemProps> = ({ item, navigationToggle }: INavigationItemProps) => {
   const { label, to, icon } = item
   const { link } = useStyles()
   return (

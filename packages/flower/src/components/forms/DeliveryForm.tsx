@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Card, CardHeader, CardContent, Grid, TextField, IconButton } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const DeliveryForm: React.FC = () => {
+const DeliveryForm: FC = () => {
   const { card } = useStyles()
   return (
     <Card className={card}>

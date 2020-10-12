@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, FC } from 'react'
 import { Typography, Card, CardHeader, CardContent, SvgIcon, Avatar } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const StepItem: React.FC<IStepItemProps> = ({ item }: IStepItemProps) => {
+const StepItem: FC<IStepItemProps> = ({ item }: IStepItemProps) => {
   const { step, Icon, viewBox, description } = item
   const { icon, card, avatar } = useStyles()
   return (

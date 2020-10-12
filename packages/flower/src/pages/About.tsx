@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { Grid, Typography, SvgIcon, Card, Avatar, CardContent, CardHeader, Container } from '@material-ui/core'
 import JourneySvg from '../assets/svg/journey.svg'
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const About: React.FC = () => {
+const About: FC = () => {
   const { container, image, card, avatar } = useStyles()
   return (
     <Container className={container}>

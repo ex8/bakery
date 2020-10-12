@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, useTheme } from '@material-ui/core'
-import { IAppState } from '../../state/reducers'
 import { connect } from 'react-redux'
+import { IAppState } from '../../state/reducers'
 import { cartClearDialogToggle, ICartClearDialogToggleAction } from '../../state/actions'
 
 interface IClearCartDialogProps {
@@ -9,7 +9,7 @@ interface IClearCartDialogProps {
   cartClearDialogToggle: () => ICartClearDialogToggleAction
 }
 
-const ClearCartDialog: React.FC<IClearCartDialogProps> = ({ clearDialogOpen, cartClearDialogToggle }: IClearCartDialogProps) => {
+const ClearCartDialog: FC<IClearCartDialogProps> = ({ clearDialogOpen, cartClearDialogToggle }: IClearCartDialogProps) => {
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'))
   return (

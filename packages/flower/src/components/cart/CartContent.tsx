@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { List, Avatar } from '@material-ui/core'
-import CartContentItem from './CartContentItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSadCry } from '@fortawesome/free-solid-svg-icons'
+import CartContentItem from './CartContentItem'
 
 const useStyles = makeStyles((theme: Theme) => ({
   avatar: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const CartContent: React.FC = () => {
+const CartContent: FC = () => {
   const { avatar } = useStyles()
   return (
     <List>

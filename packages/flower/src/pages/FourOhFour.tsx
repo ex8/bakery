@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container, SvgIcon, Typography, Grid, Button } from '@material-ui/core'
-import FourOhFourSvg from '../assets/svg/fourOhFour.svg'
 import { Link } from 'react-router-dom'
+import FourOhFourSvg from '../assets/svg/fourOhFour.svg'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 
-const FourOhFour: React.FC = () => {
+const FourOhFour: FC = () => {
   const { container, svg, center, link } = useStyles()
   return (
     <Container className={container}>

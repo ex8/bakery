@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Typography, Grid, Button } from '@material-ui/core'
-import Product from '../product/Product'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import Product from '../product/Product'
 
-const Featured: React.FC = () => {
+const Featured: FC = () => {
   return (
     <Grid container spacing={3} justify='space-between'>
       <Grid item xs={12}>

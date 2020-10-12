@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react'
+import React, { Dispatch, FC } from 'react'
 import { CardActions, Grid, Tooltip, IconButton, Button } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const ProductItemActions: React.FC<IProductItemActionsProps> = ({ expanded, setExpanded }: IProductItemActionsProps) => {
+const ProductItemActions: FC<IProductItemActionsProps> = ({ expanded, setExpanded }: IProductItemActionsProps) => {
   const { expand, expandOpened, link } = useStyles()
   return (
     <CardActions>

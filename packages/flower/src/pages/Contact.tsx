@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, SvgIcon, Typography, Container } from '@material-ui/core'
 import MailSvg from '../assets/svg/mail.svg'
@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const Contact: React.FC = () => {
+const Contact: FC = () => {
   const { container, image } = useStyles()
   return (
     <Container className={container}>

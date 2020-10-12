@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Button, Divider, Drawer, Grid } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { IAppState } from '../../state/reducers'
 import { ICartToggleAction, cartToggle } from '../../state/actions'
-import { Link } from 'react-router-dom'
 import CartContent from './CartContent'
 import CartTitle from './CartTitle'
 
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }))
 
-const Cart: React.FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
+const Cart: FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
   const { drawer, paper, checkout, link } = useStyles()
   return (
     <Drawer
