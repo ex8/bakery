@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Typography, Divider, Grid, Button, SvgIcon } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Link } from 'react-router-dom'
 import CakeSvg from '../../assets/svg/cake.svg'
+import { To } from '../../routes'
 
 const useStyles = makeStyles((theme: Theme) => ({
   color: {
@@ -12,10 +12,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
   icon: {
     width: '100%',
     height: '100%',
@@ -23,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 const Hero: FC = () => {
-  const { color, divider, link, icon } = useStyles()
+  const { color, divider, icon } = useStyles()
   return (
     <Grid container>
       <Grid item xs={12} sm={5}>
@@ -46,14 +42,14 @@ const Hero: FC = () => {
         <div className={divider} />
         <Grid container spacing={2}>
           <Grid item>
-            <Link className={link} to='/menu'>
+            <To to='/menu'>
               <Button variant='contained' color='secondary'>View Our Menu</Button>
-            </Link>
+            </To>
           </Grid>
           <Grid item>
-            <Link className={link} to='/about'>
+            <To to='/about'>
               <Button variant='contained' color='primary'>Learn About Us</Button>
-            </Link>
+            </To>
           </Grid>
         </Grid>
       </Grid>

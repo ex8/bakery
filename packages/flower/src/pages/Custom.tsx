@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Container, SvgIcon, Button } from '@material-ui/core'
 import ContactForm from '../components/forms/ContactForm'
 import PortfolioSvg from '../assets/svg/portfolio.svg'
-import { Link } from 'react-router-dom'
+import { To } from '../routes'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -19,14 +19,10 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
 }))
 
 const Custom: FC = () => {
-  const { container, image, center, link } = useStyles()
+  const { container, image, center } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
@@ -43,9 +39,9 @@ const Custom: FC = () => {
             Check out our rich gallery of photos to see our custom cakes.
             We have a wide array of diverse cakes for all kinds of celebrations!
           </Typography>
-          <Link className={link} to='/gallery'>
+          <To to='/gallery'>
             <Button color='secondary' variant='contained'>Our Gallery</Button>
-          </Link>
+          </To>
         </Grid>
         <Grid item xs={12} sm={7}>
           <SvgIcon classes={{ root: image }} component={PortfolioSvg} viewBox='0 0 750 750' />

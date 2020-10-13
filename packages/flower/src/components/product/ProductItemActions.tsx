@@ -4,9 +4,9 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import clsx from 'clsx'
-import { Link } from 'react-router-dom'
+import { To } from '../../routes'
 
-export interface IProductItemActionsProps {
+interface IProductItemActionsProps {
   expanded: boolean
   setExpanded: Dispatch<boolean>
 }
@@ -22,27 +22,19 @@ const useStyles = makeStyles((theme: Theme) => ({
   expandOpened: {
     transform: 'rotate(180deg)',
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
 }))
 
 const ProductItemActions: FC<IProductItemActionsProps> = ({ expanded, setExpanded }: IProductItemActionsProps) => {
-  const { expand, expandOpened, link } = useStyles()
+  const { expand, expandOpened } = useStyles()
   return (
     <CardActions>
       <Grid container justify='space-between'>
         <Grid item>
-          <Link className={link} to='/menu/ff'>
-            <Button
-            variant='contained'
-            color='secondary'
-            size='small'
-          >
+          <To to='menu/ff'>
+            <Button variant='contained' color='secondary' size='small'>
               View Item
             </Button>
-          </Link>
+          </To>
         </Grid>
         <Grid item>
           <Tooltip title='Add to cart' arrow>

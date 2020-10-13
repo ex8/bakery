@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Collapse, CardContent, Typography } from '@material-ui/core'
 
-export interface IProductItemCollapseProps {
+interface IProductItemCollapseProps {
   expanded: boolean
 }
 

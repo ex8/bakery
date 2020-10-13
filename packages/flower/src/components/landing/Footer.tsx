@@ -2,11 +2,11 @@
 import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Grid, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faHeart, faInfoCircle, faShoppingBasket, faPhoneAlt, faTh, faBirthdayCake, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faInstagram, faTwitter, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { To } from '../../routes'
 
 type FooterMenu = 'main' | 'sweets' | 'social'
 
@@ -25,8 +25,8 @@ const menus: Record<FooterMenu, IFooterMenuItem[]> = {
   sweets: [
     { to: '/menu', icon: faTh, text: 'Menu' },
     { to: '/custom', icon: faBirthdayCake, text: 'Custom' },
-    { to: '/checkout', icon: faShoppingBasket, text: 'Checkout' },
     { to: '/gallery', icon: faCamera, text: 'Gallery' },
+    { to: '/checkout', icon: faShoppingBasket, text: 'Checkout' },
   ],
   social: [
     { to: '/', icon: faInstagram, text: 'Instagram' },
@@ -43,20 +43,16 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(4),
     marginTop: theme.spacing(4),
   },
-  link: {
-    textDecoration: 'none',
-    color: 'inherit',
-  },
 }))
 
 const Footer: FC = () => {
-  const { container, link } = useStyles()
+  const { container } = useStyles()
 
   const renderMenu = (menu: IFooterMenuItem[]) => {
     return (
       <List>
         {menu.map(({ to, icon, text }, i) => (
-          <Link key={i} className={link} to={to}>
+          <To key={i} to={to}>
             <ListItem button>
               <ListItemIcon>
                 <FontAwesomeIcon icon={icon} />
@@ -65,7 +61,7 @@ const Footer: FC = () => {
                 {text}
               </ListItemText>
             </ListItem>
-          </Link>
+          </To>
         ))}
       </List>
     )

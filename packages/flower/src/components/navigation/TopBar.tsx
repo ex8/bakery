@@ -3,10 +3,10 @@ import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/cor
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { navigationToggle, INavigationToggleAction } from '../../state/actions'
 import { cartToggle, ICartToggleAction } from '../../state/actions'
+import { To } from '../../routes'
 
 interface ITopBarProps {
   navigationToggle: () => INavigationToggleAction
@@ -17,10 +17,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
   bars: {
     marginLeft: -12,
   },
@@ -28,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 const TopBar: FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps) => {
-  const { container, link, bars, toolbar } = useStyles()
+  const { container, bars, toolbar } = useStyles()
   return (
     <div className={container}>
       <AppBar color='inherit' elevation={0}>
@@ -37,7 +33,7 @@ const TopBar: FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps
             <FontAwesomeIcon icon={faBars} size="xs" />
           </IconButton>
           <Typography className={container} variant='h6'>
-            <Link className={link} to='/'>Heavenly Sweets</Link>
+            <To to='/'>Heavenly Sweets</To>
           </Typography>
           <IconButton color='inherit' onClick={() => cartToggle()}>
             <Badge badgeContent={5} color="primary">

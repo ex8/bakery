@@ -2,11 +2,11 @@ import React, { FC } from 'react'
 import { Button, Divider, Drawer, Grid } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { IAppState } from '../../state/reducers'
 import { ICartToggleAction, cartToggle } from '../../state/actions'
 import CartContent from './CartContent'
 import CartTitle from './CartTitle'
+import { To } from '../../routes'
 
 interface ICartProps {
   open: boolean
@@ -30,14 +30,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     bottom: theme.spacing(0),
     position: 'absolute',
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
 }))
 
 const Cart: FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
-  const { drawer, paper, checkout, link } = useStyles()
+  const { drawer, paper, checkout } = useStyles()
   return (
     <Drawer
       className={drawer}
@@ -55,7 +51,7 @@ const Cart: FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
           <CartContent />
         </Grid>
         <Grid item xs={12}>
-          <Link className={link} to='/checkout'>
+          <To to='/checkout'>
             <Button
               className={checkout}
               color='secondary'
@@ -65,8 +61,8 @@ const Cart: FC<ICartProps> = ({ open, cartToggle }: ICartProps) => {
               fullWidth
             >
               Checkout 5 items ($105.21)
-          </Button>
-          </Link>
+            </Button>
+          </To>
         </Grid>
       </Grid>
     </Drawer>

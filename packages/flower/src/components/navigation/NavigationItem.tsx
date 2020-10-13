@@ -1,35 +1,26 @@
 import React, { FC } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { navigationToggle, INavigationToggleAction } from '../../state/actions'
 import { INavigationItem } from './Navigation'
+import { To } from '../../routes'
 
-export interface INavigationItemProps {
+interface INavigationItemProps {
   item: INavigationItem
   navigationToggle: () => INavigationToggleAction
 }
 
-const useStyles = makeStyles(() => ({
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
-}))
-
 const NavigationItem: FC<INavigationItemProps> = ({ item, navigationToggle }: INavigationItemProps) => {
   const { label, to, icon } = item
-  const { link } = useStyles()
   return (
-    <Link className={link} to={to}>
+    <To to={to}>
       <ListItem button onClick={() => navigationToggle()}>
         <ListItemIcon>
           {icon}
         </ListItemIcon>
         <ListItemText primary={label} />
       </ListItem>
-    </Link>
+    </To>
   )
 }
 

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Container, SvgIcon, Typography, Grid, Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import FourOhFourSvg from '../assets/svg/fourOhFour.svg'
+import { To } from '../routes'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -18,15 +19,11 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  link: {
-    color: 'inherit',
-    textDecoration: 'none',
-  },
 }))
 
 
 const FourOhFour: FC = () => {
-  const { container, svg, center, link } = useStyles()
+  const { container, svg, center } = useStyles()
   return (
     <Container className={container}>
       <Grid container>
@@ -36,9 +33,9 @@ const FourOhFour: FC = () => {
         <Grid className={center} item xs={12} sm={5}>
           <Typography variant='h2'>Oops!</Typography>
           <Typography variant='h5'>We cannot find that page!</Typography>
-          <Link className={link} to='/'>
+          <To to='/'>
             <Button color='secondary' variant='contained'>Back Home</Button>
-          </Link>
+          </To>
         </Grid>
       </Grid>
     </Container>

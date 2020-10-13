@@ -3,7 +3,7 @@ import { List } from '@material-ui/core'
 import NavigationItem from './NavigationItem'
 import { INavigationItem } from './Navigation'
 
-export interface INavigationItemListProps {
+interface INavigationItemListProps {
   items: INavigationItem[]
 }
 
