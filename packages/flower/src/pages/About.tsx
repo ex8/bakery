@@ -1,15 +1,12 @@
 import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon, Card, Avatar, CardContent, CardHeader, Container } from '@material-ui/core'
+import { Grid, Typography, Card, Avatar, CardContent, CardHeader, Container } from '@material-ui/core'
 import JourneySvg from '../assets/svg/journey.svg'
+import { Svg } from '../components/landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
   },
   card: {
     padding: theme.spacing(4),
@@ -20,12 +17,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 const About: FC = () => {
-  const { container, image, card, avatar } = useStyles()
+  const { container, card, avatar } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
-          <SvgIcon classes={{ root: image }} component={JourneySvg} viewBox='0 0 1000 1000' />
+          <Svg component={JourneySvg} viewBox='0 0 1000 1000' />
         </Grid>
         <Grid item xs={12} sm={6}>
           <Typography variant='h4' gutterBottom>

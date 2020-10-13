@@ -1,6 +1,7 @@
 import React, { FunctionComponent, FC } from 'react'
-import { Typography, Card, CardHeader, CardContent, SvgIcon, Avatar } from '@material-ui/core'
+import { Typography, Card, CardHeader, CardContent, Avatar } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import { Svg } from '../landing'
 
 export interface IStepItem {
   step: number
@@ -14,10 +15,6 @@ interface IStepItemProps {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-  icon: {
-    width: '100%',
-    height: '100%',
-  },
   card: {
     padding: theme.spacing(4),
   },
@@ -28,12 +25,12 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const StepItem: FC<IStepItemProps> = ({ item }: IStepItemProps) => {
   const { step, Icon, viewBox, description } = item
-  const { icon, card, avatar } = useStyles()
+  const { card, avatar } = useStyles()
   return (
     <Card className={card}>
       <CardHeader avatar={<Avatar className={avatar}>{step}</Avatar>} />
       <CardContent>
-        <SvgIcon classes={{ root: icon }} component={Icon} viewBox={viewBox} />
+        <Svg component={Icon} viewBox={viewBox} />
         <Typography>{description}</Typography>
       </CardContent>
     </Card>

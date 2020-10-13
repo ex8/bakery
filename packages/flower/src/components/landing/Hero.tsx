@@ -1,8 +1,9 @@
 import React, { FC } from 'react'
-import { Typography, Divider, Grid, Button, SvgIcon } from '@material-ui/core'
+import { Typography, Divider, Grid, Button } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import CakeSvg from '../../assets/svg/cake.svg'
 import { To } from '../../routes'
+import { Svg } from '../landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   color: {
@@ -12,14 +13,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
-  icon: {
-    width: '100%',
-    height: '100%',
-  },
 }))
 
 const Hero: FC = () => {
-  const { color, divider, icon } = useStyles()
+  const { color, divider } = useStyles()
   return (
     <Grid container>
       <Grid item xs={12} sm={5}>
@@ -54,7 +51,7 @@ const Hero: FC = () => {
         </Grid>
       </Grid>
       <Grid item xs={12} sm={7}>
-        <SvgIcon classes={{ root: icon }} component={CakeSvg} fontSize='large' viewBox='0 0 1000 1000' />
+        <Svg component={CakeSvg} fontSize='large' viewBox='0 0 1000 1000' />
       </Grid>
     </Grid>
   )

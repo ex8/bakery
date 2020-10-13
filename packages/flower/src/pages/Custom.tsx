@@ -1,17 +1,14 @@
 import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Typography, Container, SvgIcon, Button } from '@material-ui/core'
+import { Grid, Typography, Container, Button } from '@material-ui/core'
 import ContactForm from '../components/forms/ContactForm'
 import PortfolioSvg from '../assets/svg/portfolio.svg'
 import { To } from '../routes'
+import { Svg } from '../components/landing'
 
 const useStyles = makeStyles(() => ({
   container: {
     flex: 1,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
   },
   center: {
     display: 'flex',
@@ -22,7 +19,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Custom: FC = () => {
-  const { container, image, center } = useStyles()
+  const { container, center } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
@@ -44,7 +41,7 @@ const Custom: FC = () => {
           </To>
         </Grid>
         <Grid item xs={12} sm={7}>
-          <SvgIcon classes={{ root: image }} component={PortfolioSvg} viewBox='0 0 750 750' />
+          <Svg component={PortfolioSvg} viewBox='0 0 750 750' />
         </Grid>
         <Grid item xs={12} sm={7}>
           <Typography variant='h4'>Custom Cake Order</Typography>

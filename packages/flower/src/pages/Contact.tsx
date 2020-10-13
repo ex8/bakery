@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid, SvgIcon, Typography, Container } from '@material-ui/core'
+import { Grid, Typography, Container } from '@material-ui/core'
 import MailSvg from '../assets/svg/mail.svg'
 import CitySvg from '../assets/svg/city.svg'
 import ContactForm from '../components/forms/ContactForm'
 import SocialButtons from '../components/landing/SocialButtons'
+import { Svg } from '../components/landing'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -25,10 +26,10 @@ const Contact: FC = () => {
           <ContactForm />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <SvgIcon classes={{ root: image }} component={MailSvg} viewBox='0 0 1000 1000' />
+          <Svg component={MailSvg} viewBox='0 0 1000 1000' />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <SvgIcon classes={{ root: image }} component={CitySvg} viewBox='0 0 1000 1000' />
+          <Svg component={CitySvg} viewBox='0 0 1000 1000' />
         </Grid>
         <Grid item xs={12} sm={6}>
           <Typography variant='h5' gutterBottom>

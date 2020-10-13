@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Grid, Typography, SvgIcon, Container } from '@material-ui/core'
+import { Grid, Typography, Container } from '@material-ui/core'
 import CartAddSvg from '../assets/svg/add_cart.svg'
 import CalendarSvg from '../assets/svg/calendar.svg'
 import PaySvg from '../assets/svg/pay.svg'
@@ -10,14 +10,11 @@ import StepItem, { IStepItem } from '../components/landing/StepItem'
 import Hero from '../components/landing/Hero'
 import Featured from '../components/landing/Featured'
 import SocialButtons from '../components/landing/SocialButtons'
+import { Svg } from '../components/landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
-  },
-  icon: {
-    width: '100%',
-    height: '100%',
   },
   strip: {
     marginBottom: theme.spacing(4),
@@ -52,7 +49,7 @@ const steps: IStepItem[] = [
 ]
 
 const Landing: FC = () => {
-  const { container, icon, strip } = useStyles()
+  const { container, strip } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
@@ -78,7 +75,7 @@ const Landing: FC = () => {
             <Grid item xs={12} sm={6}>
               <Grid container>
                 <Grid item xs={12}>
-                  <SvgIcon classes={{ root: icon }} component={SocialSvg} viewBox='0 0 1000 1000' />
+                  <Svg component={SocialSvg} viewBox='0 0 1000 1000' />
                 </Grid>
               </Grid>
             </Grid>
