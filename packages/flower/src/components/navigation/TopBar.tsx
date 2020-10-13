@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Typography, Badge, Button } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -35,6 +35,9 @@ const TopBar: FC<ITopBarProps> = ({ navigationToggle, cartToggle }: ITopBarProps
           <Typography className={container} variant='h6'>
             <To to='/'>Heavenly Sweets</To>
           </Typography>
+          <To to='/menu'>
+            <Button>Menu</Button>
+          </To>
           <IconButton color='inherit' onClick={() => cartToggle()}>
             <Badge badgeContent={5} color="primary">
               <FontAwesomeIcon icon={faShoppingCart} size="xs" />

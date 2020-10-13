@@ -11,14 +11,10 @@ const useStyles = makeStyles(() => ({
   container: {
     flex: 1,
   },
-  image: {
-    width: '100%',
-    height: '100%',
-  },
 }))
 
 const Contact: FC = () => {
-  const { container, image } = useStyles()
+  const { container } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
