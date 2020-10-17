@@ -10,7 +10,7 @@ import StepItem, { IStepItem } from '../components/landing/StepItem'
 import Hero from '../components/landing/Hero'
 import Featured from '../components/landing/Featured'
 import SocialButtons from '../components/landing/SocialButtons'
-import { Svg } from '../components/landing'
+import { Svg, Carousel } from '../components/landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -54,7 +54,8 @@ const Landing: FC = () => {
     <Container className={container}>
       <Grid container spacing={2}>
         <Grid className={strip} item xs={12}>
-          <Hero />
+          {/* <Hero /> */}
+          <Carousel />
         </Grid>
         <Grid className={strip} item xs={12}>
           <Grid container spacing={2}>
