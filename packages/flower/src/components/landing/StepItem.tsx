@@ -16,7 +16,7 @@ interface IStepItemProps {
 
 const useStyles = makeStyles((theme: Theme) => ({
   card: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(2),
   },
   avatar: {
     backgroundColor: theme.palette.secondary.main,

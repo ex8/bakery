@@ -1,19 +1,16 @@
 import React, { useState, FC } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@material-ui/core'
+import { Card, CardContent, Grid, Paper, Typography } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import ProductItemCollapse from './ProductItemCollapse'
 import ProductItemActions from './ProductItemActions'
 import { To } from '../../routes'
+import { Carousel } from '../landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
     flex: 1,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%',
   },
   label: {
     backgroundColor: '#e8eef1',
@@ -27,10 +24,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Product: FC = () => {
   const [expanded, setExpanded] = useState(false)
-  const { container, media, label, labelIcon } = useStyles()
+  const { container, label, labelIcon } = useStyles()
   return (
     <Card className={container}>
-      <CardMedia className={media} image='https://source.unsplash.com/collection/4459647' title='title' />
+      <Carousel noHeight />
       <CardContent>
         <Grid container>
           <Grid item xs={12}>

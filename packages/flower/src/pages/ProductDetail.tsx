@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
-import { Breadcrumbs, Button, Card, CardMedia, Grid, Link, List, ListItem, ListItemText, Typography, Container } from '@material-ui/core'
+import { Breadcrumbs, Button, Card, Grid, Link, List, ListItem, ListItemText, Typography, Container } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheese, faHome, faShoppingCart, faTh } from '@fortawesome/free-solid-svg-icons'
 import { Link as RouterLink } from 'react-router-dom'
 import Product from '../components/product/Product'
+import { Carousel } from '../components/landing'
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -19,17 +20,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   list: {
     backgroundColor: theme.palette.background.paper,
   },
-  media: {
-    height: 0,
-    paddingTop: '53.25%',
-  },
   divider: {
     margin: theme.spacing(3),
   },
 }))
 
 const ProductDetail: FC = () => {
-  const { container, card, icon, list, media, divider } = useStyles()
+  const { container, card, icon, list, divider } = useStyles()
   return (
     <Container className={container}>
       <Grid container spacing={2}>
@@ -73,7 +70,7 @@ const ProductDetail: FC = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Card className={card}>
-                <CardMedia className={media} image='https://source.unsplash.com/collection/random' title='image' />
+                <Carousel />
               </Card>
             </Grid>
             <Grid item xs={12}>
