@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Carousel: FC<ICarouselProps> = ({ navAlwaysVisible, noHeight }: ICarouselProps) => {
   const images = [
     'https://i.imgur.com/WgQuxlv.jpg',
-    // 'https://images.unsplash.com/photo-1578985545062-69928b1d9587',
-    // 'https://images.unsplash.com/photo-1514056052883-d017fddd0426',
+    'https://images.unsplash.com/photo-1578985545062-69928b1d9587',
+    'https://images.unsplash.com/photo-1514056052883-d017fddd0426',
   ]
 
   const { img, yHeight } = useStyles()
